@@ -2,9 +2,9 @@ ScsiClass::ScsiClass()
 {
 	ScsiClass::SetCdDrives();
 	ScsiClass::OpenCdUnit();
-	ScsiClass::OpenUnit					= FALSE;
-	ScsiClass::SetUnit					= FALSE;
-	ScsiClass::UserRequestPacket		= FALSE;
+	ScsiClass::OpenUnit				= FALSE;
+	ScsiClass::SetUnit				= FALSE;
+	ScsiClass::UserRequestPacket			= FALSE;
 	ScsiClass::CatalogEntryAuto			= true;
 	GetSystemInfo(&this->ScsiClass::SystemInfo);
 	ScsiClass::GetFeatures(ScsiClass::packet);
@@ -23,7 +23,7 @@ UCHAR ScsiClass::SetCdDrives()
 	char nocd[8];
 	UINT drive_type;
 	int count;
-	char string[32 ]    = {0};				
+	char string[32 ]    	= {0};				
 	char letter[4]		= "A:";	
 	UINT Type;
 
@@ -62,9 +62,9 @@ UCHAR ScsiClass::SetCdDrives()
 	BOOLEAN ScsiClass::OpenDoor(PACKET_DRIVER packet)//just set up packet and call SendScsi
 	{
 packet.Amount_Sectors			= 0;
-packet.Size_Sectors				= 0X800;
+packet.Size_Sectors			= 0X800;
 packet.Amount_Transfer			= 0;
-packet.hcd_device				= ScsiClass::CurrentScsiHandle;
+packet.hcd_device			= ScsiClass::CurrentScsiHandle;
 ScsiClass::CurrentBlock			= FALSE;
 ScsiClass::spwb.Block.DataIn	= SCSI_IOCTL_DATA_UNSPECIFIED;
 ScsiClass::spwb.Block.Cdb[0]	= 0X1B;//command scsi
@@ -86,9 +86,9 @@ return(ScsiClass::SendScsi(packet));
 	{
 
 packet.Amount_Sectors			= 0;
-packet.Size_Sectors				= 0X800;
+packet.Size_Sectors			= 0X800;
 packet.Amount_Transfer			= 0;
-packet.hcd_device				= ScsiClass::CurrentScsiHandle;
+packet.hcd_device			= ScsiClass::CurrentScsiHandle;
 ScsiClass::CurrentBlock			= FALSE;
 ScsiClass::spwb.Block.DataIn	= SCSI_IOCTL_DATA_UNSPECIFIED;
 ScsiClass::spwb.Block.Cdb[0]	= 0X1B;//command scsi
