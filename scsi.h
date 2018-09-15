@@ -135,7 +135,7 @@
 		UCHAR	GetInquiry(PACKET_DRIVER packet);
 		bool	GetStartTime();
 		bool	GetEndTime();
-	    UCHAR	LoadUnLoad(PACKET_DRIVER packet);
+	    	UCHAR	LoadUnLoad(PACKET_DRIVER packet);
 		UCHAR	MechStatus(PACKET_DRIVER packet);
 		UCHAR	ModeSelect(PACKET_DRIVER packet);
 		UCHAR	ModeSense(PACKET_DRIVER packet);
